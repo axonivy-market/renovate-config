@@ -1,41 +1,38 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Keep dependencies on master (LE/DEV) and the LTS release/12.0 up-to-date",
+  "description": "Keep dependencies on all active branches up-to-date",
   "extends": [
     "config:recommended"
   ],
   "baseBranchPatterns": [
     "master",
-    "release/12.0"
+    "release/12.0",
+    "release/14.0"
   ],
   "labels": [
     "dependencies"
   ],
   "semanticCommits": "disabled",
-  "timezone": "Asia/Bangkok",
-  "schedule": [
-    "before 5am on monday"
-  ],
-  "automerge": true,
   "packageRules": [
     {
-      "description": "No major or replacement upgrades on the LTS release branch",
+      "description": "Disable major upgrades for release branches",
       "matchBaseBranches": [
-        "release/12.0"
+        "release/12.0",
+        "release/14.0"
       ],
       "matchUpdateTypes": [
-        "major",
-        "replacement"
+        "major"
       ],
       "enabled": false
     },
     {
-      "description": "No PrimeFaces upgrades",
       "matchPackageNames": [
-        "org.primefaces:primefaces",
-        "org.primefaces.extensions:primefaces-extensions"
+        "org.apache.maven.plugins:*",
+        "org.junit.jupiter:*",
+        "org.assertj:*",
+        "com.axonivy.ivy.ci:*"
       ],
-      "enabled": false
+      "automerge": true
     }
   ]
 }
