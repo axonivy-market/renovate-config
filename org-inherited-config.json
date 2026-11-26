@@ -1,10 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-inherited-schema.json",
-  "onboardingConfigFileName": ".github/renovate.json",
-  "onboardingConfig": {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "local>axonivy-market/renovate-config"
-    ]
-  }
+  "onboardingConfigFileName": ".github/renovate.json"
 }
