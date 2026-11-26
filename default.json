@@ -3,7 +3,7 @@
   "description": "Keep dependencies on all active branches up-to-date",
   "extends": [
     "config:recommended",
-    "schedule:earlyMondays"
+    "schedule:weekends"
   ],
   "baseBranchPatterns": [
     "master",
@@ -29,10 +29,12 @@
     },
     {
       "matchPackageNames": [
-        "org.apache.maven.plugins:*",
+        "org.apache.maven.*",
         "org.junit.jupiter:*",
         "org.assertj:*",
-        "com.axonivy.ivy.ci:*"
+        "com.axonivy.ivy.ci:*",
+        "com.tngtech.archunit:*",
+        "com.arize:*"
       ],
       "automerge": true
     }
